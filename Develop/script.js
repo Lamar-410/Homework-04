@@ -65,15 +65,34 @@ function choiceSelected(event) {
        //user got it incorrect
    }
    currentQuestion++;
+   if (questions.length === currentQuestion) {
+       // Load score page window.location.href
+   }
    populateQuestionAndAnswers();
     console.log(event);
 };
+
 
 
 function startQuiz() {
     $("#initialQuizInfo").replaceWith($("#questionAndAnswers"));
     populateQuestionAndAnswers();
     $("#questionAndAnswers").removeClass("hide");
+
+    var timeleft = 75;
+
+    var downloadTimer = setInterval(function function1(){
+    document.getElementById("countdown").innerHTML = timeleft + 
+    "&nbsp"+"seconds remaining";
+
+    timeleft -= 1;
+    if(timeleft <= 0){
+        clearInterval(downloadTimer);
+        document.getElementById("countdown").innerHTML = "Time is up!"
+    }
+    }, 1000);
+
+    console.log(countdown);
 };
 
 function populateQuestionAndAnswers() {

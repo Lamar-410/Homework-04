@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="script.js"></script>
-    
+    <div>
+        <a id="highScoresLink" href="highscores.html">View Highscores</a>
+    </div>
+
+    <div id="countdown">
+    </div>
+   
     <div id="initialQuizInfo" class="main">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related quesitons within the time limit. Keep in mind that incorrect answers
             will penalize your score/time by ten seconds!</p>
-        <button onclick="startQuiz()">Start Quiz</button>
+        <button id="gameStart" onclick="startQuiz()">Start Quiz</button>
     </div>
 
     <div id="questionAndAnswers" class="main hide">
         <h1 id="question"></h1>
         <ol>
-            <li onclick="choiceSelected(event)" id="answer1"><a href="#"></a></li>
-            <li onclick="choiceSelected(event)" id="answer2"><a href="#"></a></li>
-            <li onclick="choiceSelected(event)" id="answer3"><a href="#"></a></li>
-            <li onclick="choiceSelected(event)" id="answer4"><a href="#"></a></li>
+            <button class="answerChoice"><li onclick="choiceSelected(event)" id="answer1"><a href="#"></a></li></button>
+            <button class="answerChoice"><li onclick="choiceSelected(event)" id="answer2"><a href="#"></a></li></button>
+            <button class="answerChoice"><li onclick="choiceSelected(event)" id="answer3"><a href="#"></a></li></button>
+            <button class="answerChoice"><li onclick="choiceSelected(event)" id="answer4"><a href="#"></a></li></button>
         </ol>
     </div>
 
